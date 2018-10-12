@@ -40,6 +40,7 @@ client.on('message', message => {
     var fa2dh = '';// Alpha Codes
     var filter = m => m.author.id === message.author.id;// Alpha Codes
     var subChannel = message.guild.channels.find(c => c.name === 'support-join');// Alpha Codes
+    var submissionx = message.guild.channels.find(a => a.name === 'submissions');
    
     if(command == prefix + 'تقديم') {// Alpha Codes
         if(message.author.bot) return;
@@ -104,11 +105,11 @@ client.on('message', message => {
                                                 .addField('حسابه', message.author)
                                                 .addField('ايدي حسابه', message.author.id, true)
                                                
-                                                subChannel.send(subMsg).then(msgS => {
+                                                submissionx.send(subMsg).then(msgS => {
                                                     msgS.react('✅').then(() => msgS.react('❎'))
                                                    
-                                                    let accept = (reaction, user) => reaction.emoji.name === '✅'  && user.id === 'ايدي الي يقبل الطلب'
-                                                    let noAccept = (reaction, user) => reaction.emoji.name === '❎' && user.id === 'ايدي الي يقبل الطلب'
+                                                    let accept = (reaction, user) => reaction.emoji.name === '✅'  && user.id === "410778583682777098"
+                                                    let noAccept = (reaction, user) => reaction.emoji.name === '❎' && user.id === "410778583682777098"
                                                    
                                                     let acceptRe = msgS.createReactionCollector(accept);
                                                     let noAcceptRe = msgS.createReactionCollector(noAccept);
